@@ -1,2 +1,0 @@
-# Dananchezhian-portfolio
-Model website
