@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>bike add</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+            }
+          .main{
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(to right,#f008aa, #4c9fe4);
+          }
+          nav{
+            width: 80%;
+            position: sticky;
+            margin: 20px auto;
+            position: sticky;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            
+          }
+          .logo{
+            flex-basis: 20%;
+          }
+          .nav-links{
+            flex:1;
+            text-align: right;
+          }
+          .nav-links ul li{
+           list-style: none;
+           display: inline-block;
+           margin: 0 20px;
+
+          }
+          .nav-links ul li a{
+            text-decoration: none;
+            color: aliceblue;
+
+          }
+          .information{
+            width: 1000px;
+            height: 1000px;
+            position: absolute;
+            top: 50%;
+            left: -10%;
+            transform: translateY(-50%);
+          }
+          #circle{
+            width: 800px;
+            height: 800px;
+            position: absolute;
+            top: 50px;
+            left:0;
+            border-radius: 50%;
+            transform: rotate(0deg);
+            transition: 1s;
+           
+          }
+          .feature{
+            position: absolute;
+            display: flex;
+            color:#fff;
+          }
+          .feature div{
+            margin-left: 30px;
+          }
+          .feature div p{
+            margin-top: 8px;
+          }
+         .one{
+            top: 420px;
+            right: 60px;
+         }
+         .two{
+            top: 600px;
+            left: 290px;
+            transform: rotate(-270deg);
+         }
+         .three{
+            bottom: 430px;
+            left: 100px;
+            transform: rotate(-180deg);
+         }
+         .four{
+            top: 100px;
+            right: 250px;
+            transform: rotate(-90deg);
+         }
+         .bike{
+            width: 350px;
+            height: 350px;
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            transform: translateY(-50%);
+            z-index: 1;
+         }
+         .contols{
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            
+         }
+         .contols h3{
+            margin: 15px 0;
+            color: rgb(0, 0, 0);
+            
+         }
+        #upbtn{
+            width: 15px;
+            cursor: pointer;
+        }
+        #downbtn{
+            width: 15px;
+            cursor: pointer;
+            transform: rotate(180deg);
+        }
+        .overlay{
+            width: 0;
+            height: 0;
+            border-top: 500px solid rgb(255, 255, 255);
+            border-right: 500px solid transparent;
+            border-bottom: 500px solid rgb(255, 255, 255);
+            border-left: 500px solid rgb(255, 255, 255);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .text{
+            float: right;
+            position: relative;
+            top: 130px;
+            right: 230px;
+            color: #fff;
+        }
+        .text h3 {
+            text-align: center;
+            margin-top: 10px;
+           font-family:cursive; 
+           text-shadow:2px 2px #000000;
+        }
+        .bike-text{
+            position: absolute;
+            top: 74%;
+            right: 75%;
+        }
+        .bike-text h3{
+            font-size: 30px;
+            font-family:brush script;
+            color: rgb(2, 85, 180);
+        }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <nav>
+                <div class="logo">
+                <img src="Bajaj-Logo.png" alt="logo" width="90px" height="60px">
+                </div>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Bike</a></li>
+                        <li><a href="#">Service</a></li>
+                        <li><a href="#">Show Room</a></li>
+                    
+                    </ul>
+
+                </div>
+              
+            </nav> 
+            <div class="information">
+                <div class="overlay"></div>
+                <img src="logo1.png" class="bike">
+                <div id="circle">
+                         <div class="feature one">
+                           
+                            <div>
+                                <h2>Model</h2>
+                                <p>RS 200 THE BEAST</p>
+                            </div>
+                        </div>
+                         <div class="feature two">
+                           
+                            <div>
+                                <h2>Brand</h2>
+                                <p>Bajaj</p>
+                            </div>
+                         </div>
+                         <div class="feature three">
+                            
+                            <div>
+                                <h2>Year</h2>
+                                <p>2023</p>
+                            </div>
+                         </div>
+                         <div class="feature four">
+                            
+                            <div>
+                                <h2>Mailage</h2>
+                                <p>Around 35KM Per litter</p>
+                            </div>
+                         </div>
+                  
+                </div>
+                    
+            </div>
+            <div class="contols">
+                <img src="ua.png" id="upbtn">
+                <h3>features</h3>
+                <img src="ua.png" id="downbtn">
+             </div>
+             <div class="text">
+                <h1>This Website Created By</h1>
+                    <h3>DHANA</h3>
+             </div>
+             <div class="bike-text">
+                <h3>Ready To <b style="color: rgb(252, 67, 0); font-size: 30px;">>></b> Race</h3>
+             </div>
+        </div>
+            <script>
+                var circle = document.getElementById("circle");
+                var upbtn = document.getElementById("upbtn");
+                var downbtn = document.getElementById("downbtn");
+
+                var rotateValue = circle.style.transform;
+                var rotateSum;
+
+                upbtn.onclick = function(){
+                    rotateSum = rotateValue + "rotate(-90deg)"
+                    circle.style.transform = rotateSum;
+                    rotateValue = rotateSum
+
+                }
+                downbtn.onclick = function(){
+                    rotateSum = rotateValue + "rotate(90deg)"
+                    circle.style.transform = rotateSum;
+                    rotateValue = rotateSum
+
+                }
+            </script>
+
+
+
+    </body>
+</html>
